@@ -1,0 +1,17 @@
+table {
+  margin-bottom: 20px;
+}
+
+thead th {
+  text-align: left;
+  background: #aaaaaa;
+}
+
+table, tr, td, th {
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 5px 10px;
+}

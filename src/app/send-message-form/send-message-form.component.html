@@ -6,4 +6,4 @@
 </div>
 
 <button (click)="sendMessage()" [disabled]="isSending">{{isSending ? 'Sending...' : 'Send message'}}</button>
-<div *ngIf="isNotificationVisible">{{notificationText}}</div>
+<div id="notification" *ngIf="isNotificationVisible">{{notificationText}}</div>

@@ -15,17 +15,21 @@ export class SendMessageFormComponent {
 
   isSending = false;
 
+  isError = false;
+
   constructor(private messages: MessageService) {}
 
   sendMessage() {
     this.isSending = true;
+    const text = this.text;
+    this.text = '';
     fetch('https://0jr9lsjft6.execute-api.us-east-2.amazonaws.com/dev/addMessage/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        text: this.text
+        text
       })
     })
     .then(response => {
@@ -34,11 +38,11 @@ export class SendMessageFormComponent {
     .then(result => {
       const newMessage = result[0];
       this.messages.pushMessage(newMessage);
-      this.showNotification('Message sent successfully');
+      this.showSuccess('Message sent successfully');
     })
     .catch(reason => {
       console.log(reason);
-      this.showNotification('Something went wrong');
+      this.showError('Something went wrong');
     })
     .finally(() => {
       this.isSending = false;
@@ -51,5 +55,15 @@ export class SendMessageFormComponent {
     setTimeout(() => {
       this.isNotificationVisible = false;
     }, 3000);
+  }
+
+  private showSuccess(text) {
+    this.isError = false;
+    this.showNotification(text);
+  }
+
+  private showError(text) {
+    this.isError = true;
+    this.showNotification(text);
   }
 }

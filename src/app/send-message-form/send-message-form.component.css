@@ -1,0 +1,32 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 480px;
+  height: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+#notification {
+  background: aquamarine;
+  padding: 10px 20px;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  animation: fade-in 0.2s;
+}
+
+#notification.error {
+  background: orangered;
+}
