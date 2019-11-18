@@ -3,10 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import { SendMessageFormComponent } from './send-message-form/send-message-form.component';
+import { MessageListComponent } from './message-list/message-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SendMessageFormComponent,
+    SendMessageFormComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,

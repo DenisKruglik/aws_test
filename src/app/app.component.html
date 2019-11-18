@@ -1,9 +1,2 @@
-<div>
-  <label>
-    <span>Enter your message here:</span><br>
-    <textarea [(ngModel)]="text"></textarea>
-  </label>
-</div>
-
-<button (click)="sendMessage()">Send message</button>
-<div *ngIf="isNotificationVisible">{{notificationText}}</div>
+<app-message-list></app-message-list>
+<app-send-message-form></app-send-message-form>

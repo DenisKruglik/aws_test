@@ -1,0 +1,15 @@
+<table *ngIf="!isLoading()">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of getMessages();">
+      <td>{{message.text}}</td>
+      <td>{{message.created_at|date:'short'}}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="isLoading()">Loading...</div>
