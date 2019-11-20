@@ -35,9 +35,8 @@ export class SendMessageFormComponent {
     .then(response => {
       return response.json();
     })
-    .then(result => {
-      const newMessage = result[0];
-      this.messages.pushMessage(newMessage);
+    .then(() => {
+      this.messages.refresh();
       this.showSuccess('Message sent successfully');
     })
     .catch(reason => {
